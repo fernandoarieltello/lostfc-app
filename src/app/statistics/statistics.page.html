@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Statistics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid>
+    <ion-row class="header">
+      <ion-col style="text-align: left;" size="4">Nombre</ion-col>
+      <ion-col>Pts</ion-col>
+      <ion-col>PJ</ion-col>
+      <ion-col>PG</ion-col>
+      <ion-col>PE</ion-col>
+      <ion-col>PP</ion-col>
+      <ion-col>GF</ion-col>
+      <ion-col>GC</ion-col>
+      <ion-col>DG</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let data of dataTable" class="row-team">
+      <ion-col style="text-align: left; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;" size="4">{{data.name}}</ion-col>
+      <ion-col><ion-badge>{{data.pj}}</ion-badge></ion-col>
+      <ion-col>{{data.pg}}</ion-col>
+      <ion-col>{{data.pe}}</ion-col>
+      <ion-col>{{data.pp}}</ion-col>
+      <ion-col>{{data.gf}}</ion-col>
+      <ion-col>{{data.gc}}</ion-col>
+      <ion-col>{{data.gf - data.gc}}</ion-col>
+    </ion-row>    
+  </ion-grid>
+  
+</ion-content>

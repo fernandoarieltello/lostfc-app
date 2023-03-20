@@ -1,20 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<!-- menu lateral
+<ion-menu contentId="main-content" type="push">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-list-header>
+        <ion-label>General</ion-label>
+      </ion-list-header>
+      <ion-menu-toggle>
+        <ion-item routerLink="/about" >
+          <ion-label>About</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+      <ion-item routerLink="/contact" >
+        <ion-label>Contact</ion-label>
+      </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/fixture" >
+          <ion-label>Fixture</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/profile" >
+          <ion-label>Profile</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/statistics" >
+          <ion-label>Statistics</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+-->
+<!-- menu botones-->
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Inicio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+
+  <ion-content>
+    <ion-button routerLink="/about" >About</ion-button>
+    <ion-button routerLink="/contact" >Contact</ion-button>
+    <ion-button routerLink="/fixture" >Fixture</ion-button>
+    <ion-button routerLink="/profile" >Profile</ion-button>
+    <ion-button routerLink="/statistics" >Statistics</ion-button>
+  </ion-content>
+</div>
