@@ -1,0 +1,51 @@
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-list-header>
+        <ion-label><b>General</b></ion-label>
+      </ion-list-header>
+      <ion-menu-toggle>
+        <ion-item routerLink="/contact">
+          <ion-label>Contact</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/profile">
+          <ion-label>Profile</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/about">
+          <ion-label>About</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+ 
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content">
+  <ion-tabs >
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="fixture">
+        <ion-icon name="list"></ion-icon>
+        <ion-label>Fixture</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="home">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="statistics">
+        <ion-icon name="football"></ion-icon>
+        
+        <ion-label>Statistics</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

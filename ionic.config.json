@@ -1,0 +1,7 @@
+{
+  "name": "lost-fc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
