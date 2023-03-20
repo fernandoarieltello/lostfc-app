@@ -1,0 +1,24 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Statistics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row style="background-color: aquamarine;">
+      <ion-col size="4">Nombre</ion-col>
+      <ion-col class="center">Pts</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let data of dataTable">
+      <ion-col>{{data.name}}</ion-col>
+      <ion-col class="center">{{data.score}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
