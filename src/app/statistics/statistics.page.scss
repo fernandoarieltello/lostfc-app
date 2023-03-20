@@ -1,0 +1,28 @@
+
+ion-row.header {
+    background-color: green;
+    border: solid 1px #fff;
+    color: #fff;
+    text-align: center;
+    font-size: smaller;
+}
+
+ion-col {
+    text-align: center;
+}
+
+.col-team-name {
+    font-size: smaller;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left
+}
+
+.row-team:nth-child(even) {
+    background: #FFF
+}
+
+.row-team:nth-child(odd) {
+    background: #CCC
+}

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Statistics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row class="header">
+      <ion-col size="4">Equipo</ion-col>
+      <ion-col class="center">Pts</ion-col>
+      <ion-col class="center">PJ</ion-col>
+      <ion-col class="center">PG</ion-col> 
+      <ion-col class="center">PE</ion-col> 
+      <ion-col class="center">PP</ion-col> 
+      <ion-col class="center">GF</ion-col> 
+      <ion-col class="center">GC</ion-col> 
+      <ion-col class="center">DG</ion-col> 
+    </ion-row>
+    <ion-row class="row-team" *ngFor="let data of dataTable">
+      <ion-col size="4" class="col-team-name">{{data.name}}</ion-col>
+      <ion-col>
+        <ion-badge color="primary">{{data.score}}</ion-badge>
+      </ion-col>
+      <ion-col>{{data.pj}}</ion-col>
+      <ion-col>{{data.pg}}</ion-col>
+      <ion-col>{{data.pe}}</ion-col>
+      <ion-col>{{data.pp}}</ion-col>
+      <ion-col>{{data.gf}}</ion-col>
+      <ion-col>{{data.gc}}</ion-col>
+      <ion-col>{{data.gf - data.gc}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
