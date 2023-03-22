@@ -21,7 +21,7 @@ export class StatisticsService {
   }
 
   getStriker(){
-     return this.http.get('http://localhost:5000/lostfc-f992f/us-central1/app/api/stat/shooter').pipe(
+     return this.http.get('https://us-central1-lostfc-f992f.cloudfunctions.net/app/api/stat/shooter').pipe(
        map( data => {
          console.log("DATA MAP", data)
           return Object(data).results }))
