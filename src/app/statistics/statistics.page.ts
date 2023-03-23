@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatisticsService } from '../../services/statistics.service';
 
 @Component({
   selector: 'app-statistics',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatisticsPage implements OnInit {
 
-  constructor() { }
+  dataTable: any
+  Shooters:any
+  constructor(private apiStatistics: StatisticsService) { }
 
   ngOnInit() {
+    this.apiStatistics.getTable().subscribe( respuesta => { 
+      console.log("respuesta:", respuesta)
+      this.dataTable = respuesta
+    })
+    this.apiStatistics.getStriker().subscribe( respuesta => { 
+      this.Shooters = respuesta
+    })
   }
+  
 
 }

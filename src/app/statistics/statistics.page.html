@@ -9,7 +9,32 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-text-center">
-    <h3>Esto es Statistics</h3>
-  </div>
+  <ion-grid>
+    <ion-row class="header">
+      <ion-col size="4">Equipo</ion-col>
+      <ion-col>Pts</ion-col>
+      <ion-col>PJ</ion-col>
+      <ion-col>PG</ion-col>
+      <ion-col>PE</ion-col>
+      <ion-col>PP</ion-col>
+      <ion-col>GF</ion-col>
+      <ion-col>GC</ion-col>
+      <ion-col>DG</ion-col>
+  
+    </ion-row>
+  
+      <ion-row *ngFor="let data of dataTable" class="row-team">
+        <ion-col size="4" class="Nombre">{{data.name}}</ion-col>
+
+       <ion-col ><ion-badge>{{data.score}}</ion-badge></ion-col>
+        <ion-col >{{data.pg}}</ion-col>
+        <ion-col >{{data.pj}}</ion-col>
+        <ion-col >{{data.pe}}</ion-col>
+        <ion-col >{{data.pp}}</ion-col>
+        <ion-col >{{data.gf}}</ion-col>
+        <ion-col >{{data.gc}}</ion-col>
+        <ion-col >{{data.gf - data.gc}}</ion-col>
+             
+      </ion-row>
+</ion-grid>
 </ion-content>
