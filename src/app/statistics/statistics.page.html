@@ -8,30 +8,64 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid fixed>
-    <ion-row class="header">
-      <ion-col size="4">Equipo</ion-col>
-      <ion-col class="center">Pts</ion-col>
-      <ion-col class="center">PJ</ion-col>
-      <ion-col class="center">PG</ion-col> 
-      <ion-col class="center">PE</ion-col> 
-      <ion-col class="center">PP</ion-col> 
-      <ion-col class="center">GF</ion-col> 
-      <ion-col class="center">GC</ion-col> 
-      <ion-col class="center">DG</ion-col> 
-    </ion-row>
-    <ion-row class="row-team" *ngFor="let data of dataTable">
-      <ion-col size="4" class="col-team-name">{{data.name}}</ion-col>
-      <ion-col>
-        <ion-badge color="primary">{{data.score}}</ion-badge>
-      </ion-col>
-      <ion-col>{{data.pj}}</ion-col>
-      <ion-col>{{data.pg}}</ion-col>
-      <ion-col>{{data.pe}}</ion-col>
-      <ion-col>{{data.pp}}</ion-col>
-      <ion-col>{{data.gf}}</ion-col>
-      <ion-col>{{data.gc}}</ion-col>
-      <ion-col>{{data.gf - data.gc}}</ion-col>
-    </ion-row>
-  </ion-grid>
+
+  <ion-segment [(ngModel)]="selectedSegment" (ionChange)="changeSegment()">
+    <ion-segment-button value="tabla">
+      <ion-label>Tabla</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="goleadores">
+      <ion-label>Goleadores</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- TABLA DE POSICIONES -->
+  <div *ngIf="selectedSegment === 'tabla'">
+    <ion-grid fixed *ngIf="successTable">
+      <ion-row class="header">
+        <ion-col size="4">Equipo</ion-col>
+        <ion-col class="center">Pts</ion-col>
+        <ion-col class="center">PJ</ion-col>
+        <ion-col class="center">PG</ion-col> 
+        <ion-col class="center">PE</ion-col> 
+        <ion-col class="center">PP</ion-col> 
+        <ion-col class="center">GF</ion-col> 
+        <ion-col class="center">GC</ion-col> 
+        <ion-col class="center">DG</ion-col> 
+      </ion-row>
+      <ion-row class="row-team" *ngFor="let data of dataTable">
+        <ion-col size="4" class="col-team-name">{{data.name}}</ion-col>
+        <ion-col>
+          <ion-badge class="pts">{{data.score}}</ion-badge>
+        </ion-col>
+        <ion-col>{{data.pj}}</ion-col>
+        <ion-col>{{data.pg}}</ion-col>
+        <ion-col>{{data.pe}}</ion-col>
+        <ion-col>{{data.pp}}</ion-col>
+        <ion-col>{{data.gf}}</ion-col>
+        <ion-col>{{data.gc}}</ion-col>
+        <ion-col>{{data.gf - data.gc}}</ion-col>
+      </ion-row>
+    </ion-grid>
+    <div *ngIf="!successTable">
+      Este es un error temporal. Intente nuevamente.
+    </div>
+  </div>
+  <!-- TABLA DE GOLEADORES -->
+  <div *ngIf="selectedSegment === 'goleadores'">
+    <ion-list *ngIf="successStrikers">
+      <ion-item *ngFor="let striker of strikers">
+        <ion-label>
+          <b>{{striker.player}}</b>
+          <p>{{striker.name}}</p>
+        </ion-label>
+        <div slot="end">
+          {{striker.goals}}
+        </div>
+      </ion-item>
+    </ion-list>
+    <div *ngIf="!successStrikers">
+      Este es un error temporal. Intente nuevamente.
+    </div>
+  </div>
+
 </ion-content>
